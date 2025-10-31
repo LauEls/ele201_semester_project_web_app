@@ -1,5 +1,5 @@
 from django.urls import path
-from microcontroller_data.views import ChronometerViewSet, SolarTrackerViewSet, PianoViewSet, ImuLedArrayViewSet, RemoteControlledCarViewSet, SmarthouseViewSet, CandleLengthViewSet
+from microcontroller_data.views import ChronometerViewSet, SolarTrackerViewSet, PianoViewSet, ImuLedArrayViewSet, RemoteControlledCarViewSet, SmarthouseViewSet, CandleLengthViewSet, RegisteredDevicesViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
@@ -10,6 +10,7 @@ router.register('imu-led-array', ImuLedArrayViewSet)
 router.register('remote-controlled-car', RemoteControlledCarViewSet)
 router.register('smarthouse', SmarthouseViewSet)
 router.register('candle-length', CandleLengthViewSet)
+router.register('registered-devices', RegisteredDevicesViewSet)
 urlpatterns = router.urls
 
 # urlpatterns = [

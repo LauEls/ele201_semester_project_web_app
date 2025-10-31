@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from microcontroller_data.models import Chronometer, SolarTracker, Piano, ImuLedArray, RemoteControlledCar, Smarthouse, CandleLength
+from microcontroller_data.models import Chronometer, SolarTracker, Piano, ImuLedArray, RemoteControlledCar, Smarthouse, CandleLength, RegisteredDevices
 
 class ChronometerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -34,4 +34,9 @@ class SmarthouseSerializer(serializers.ModelSerializer):
 class CandleLengthSerializer(serializers.ModelSerializer):
     class Meta:
         model = CandleLength
+        fields = ('__all__')
+
+class RegisteredDevicesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RegisteredDevices
         fields = ('__all__')

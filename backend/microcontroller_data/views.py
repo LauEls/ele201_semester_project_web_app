@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics, viewsets
-from microcontroller_data.models import Chronometer, SolarTracker, Piano, ImuLedArray, RemoteControlledCar, Smarthouse, CandleLength
-from microcontroller_data.serializers import ChronometerSerializer, SolarTrackerSerializer, PianoSerializer, ImuLedArraySerializer, RemoteControlledCarSerializer, SmarthouseSerializer, CandleLengthSerializer
+from microcontroller_data.models import Chronometer, SolarTracker, Piano, ImuLedArray, RemoteControlledCar, Smarthouse, CandleLength, RegisteredDevices
+from microcontroller_data.serializers import ChronometerSerializer, SolarTrackerSerializer, PianoSerializer, ImuLedArraySerializer, RemoteControlledCarSerializer, SmarthouseSerializer, CandleLengthSerializer, RegisteredDevicesSerializer
 
 # Create your views here.
 class ChronometerViewSet(viewsets.ModelViewSet):
@@ -31,3 +31,7 @@ class SmarthouseViewSet(viewsets.ModelViewSet):
 class CandleLengthViewSet(viewsets.ModelViewSet):
     queryset = CandleLength.objects.all()
     serializer_class = CandleLengthSerializer
+
+class RegisteredDevicesViewSet(viewsets.ModelViewSet):
+    queryset = RegisteredDevices.objects.all()
+    serializer_class = RegisteredDevicesSerializer

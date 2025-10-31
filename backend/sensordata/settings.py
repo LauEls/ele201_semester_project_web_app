@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-tu1q(zsi73yhy&r=0l+b%$)0#9&uh*3pmm4^1hmoiq_9jd5mpc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hvlroboticsweb.local']
+ALLOWED_HOSTS = ['hvlroboticsweb.local', 'localhost']
 
 
 # Application definition
@@ -126,4 +126,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = ['http://127.0.0.1:5173', 'http://localhost:5173']
+CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOWED_ORIGINS = ['http://127.0.0.1:5173', 'http://localhost:5173', 'http://hvlroboticsweb.local:5173', 'http://192.168.1.182:5173']

@@ -41,3 +41,7 @@ class CandleLength(models.Model):
     candle_length = models.FloatField()
     elapsed_time = models.FloatField()
     timestamp = models.FloatField()
+
+class RegisteredDevices(models.Model):
+    mac_address = models.CharField(max_length=17)
+    device_name = models.CharField(max_length=32)

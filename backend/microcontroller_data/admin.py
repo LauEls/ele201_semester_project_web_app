@@ -1,11 +1,6 @@
 from django.contrib import admin
-from microcontroller_data.models import Chronometer
-from microcontroller_data.models import SolarTracker
-from microcontroller_data.models import Piano
-from microcontroller_data.models import ImuLedArray
-from microcontroller_data.models import RemoteControlledCar
-from microcontroller_data.models import Smarthouse
-from microcontroller_data.models import CandleLength
+from microcontroller_data.models import Chronometer, SolarTracker, Piano, ImuLedArray, RemoteControlledCar, Smarthouse, CandleLength, RegisteredDevices
+
 
 # Register your models here.
 admin.site.register(Chronometer)
@@ -15,3 +10,4 @@ admin.site.register(ImuLedArray)
 admin.site.register(RemoteControlledCar)
 admin.site.register(Smarthouse)
 admin.site.register(CandleLength)
+admin.site.register(RegisteredDevices)
