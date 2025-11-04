@@ -4,7 +4,7 @@ from microcontroller_data.models import Chronometer, SolarTracker, Piano, ImuLed
 class ChronometerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Chronometer
-        fields = ('mac_address', 'state', 'elapsed_time', 'timestamp')
+        fields = ('mac_address', 'message')
 
 class SolarTrackerSerializer(serializers.ModelSerializer):
     class Meta:

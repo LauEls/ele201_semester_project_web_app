@@ -36,10 +36,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    "daphne",
     'django.contrib.staticfiles',
     'microcontroller_data',
     'rest_framework',
     'corsheaders',
+    
+    "django_eventstream",
 ]
 
 MIDDLEWARE = [
@@ -72,7 +75,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'sensordata.wsgi.application'
-
+ASGI_APPLICATION = "sensordata.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -128,3 +131,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
 # CORS_ALLOWED_ORIGINS = ['http://127.0.0.1:5173', 'http://localhost:5173', 'http://hvlroboticsweb.local:5173', 'http://192.168.1.182:5173']
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+        'django_eventstream.renderers.SSEEventRenderer',
+        'django_eventstream.renderers.BrowsableAPIEventStreamRenderer'
+         # Add other renderers as needed
+    ]
+}
